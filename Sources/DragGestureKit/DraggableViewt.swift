@@ -78,8 +78,8 @@ public struct DraggableView<Content: View, T: Hashable>: View {
                     .onChanged { value in
                         do {
                             let element = try dragHandler.computeElementAtIndexFromDragGesture(
-                                axis: axis,
                                 data: data,
+                                axis: axis,
                                 value: value,
                                 viewSize: viewSize
                             )
