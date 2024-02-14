@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DragHandler {
     func computeElementAtIndexFromDragGesture<T>(
-        axis: Axis.Set,
         data: [T],
+        axis: Axis.Set,
         value: DragGesture.Value,
         viewSize: Double
     ) throws -> T {
