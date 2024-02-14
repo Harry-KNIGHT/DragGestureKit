@@ -1,5 +1,9 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+//
+//  DraggableView.swift
+//
+//
+//  Created by Elliot Knight on 14/02/2024.
+//
 
 import SwiftUI
 
@@ -28,11 +32,11 @@ import SwiftUI
              VStack {
                  ForEach(items) { item in
                          Text(item)
-                         .id(item)
+                            .id(item)
                      }
                  }
              }) onDragChanged { item in
-             itemWhenDragging = item
+                  itemWhenDragging = item
          }
      }
  }
