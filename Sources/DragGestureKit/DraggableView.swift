@@ -46,7 +46,7 @@ public struct DraggableView<Content: View, T: Hashable>: View {
     @Binding public var data: [T]
     let axis: Axis.Set
     let content: Content
-    let onDragChanged: (T) -> Void
+    let onDragChanged: (T?) -> Void
 
     @State private var viewSize: Double = 0.0
     private var dragHandler = DragHandler()
@@ -55,7 +55,7 @@ public struct DraggableView<Content: View, T: Hashable>: View {
         data: Binding<[T]>,
         axis: Axis.Set,
         @ViewBuilder content: () -> Content,
-        onDragChanged: @escaping (T) -> Void
+        onDragChanged: @escaping (T?) -> Void
     ) {
         self._data = data
         self.axis = axis
@@ -87,6 +87,9 @@ public struct DraggableView<Content: View, T: Hashable>: View {
                         } catch {
                             print("-- Drag gesture out of bounds --")
                         }
+                    }
+                    .onEnded { _ in 
+                        self.onDragChanged(nil)
                     }
             )
     }
