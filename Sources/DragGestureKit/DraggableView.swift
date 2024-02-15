@@ -24,7 +24,7 @@ import SwiftUI
 
  ```swift
  struct ContentView: View {
-     @State private var items = ["Item 1", "Item 2", "Item 3"]
+     @Binding private var items: [String]
      @State private var itemWhenDragging: Item?
 
      var body: some View {
