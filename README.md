@@ -20,7 +20,12 @@ Import the library into your Swift file:
 import DragGestureKit
 ```
 
-### Example
+## Example
+
+| Vertical | Horizontal |
+| --------| -----------|
+|<img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/51488675-ff27-4bb7-9f27-25bd246737ca" width="200"> | <img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/c1ba005d-3d89-4ead-9e80-b8595fec638a" width="200"> |
+
 
 Create a `DraggableView` in your SwiftUI view:
 
@@ -49,6 +54,8 @@ struct ContentView: View {
 }
 ```
 
+In the projects, go to [/Sources/DragGestureKit/Exemples/](https://github.com/Harry-KNIGHT/DragGestureKit/tree/develop/Sources/DragGestureKit/Exemples) and you'll find the exemples shown above.
+
 ## Parameters
 
 - **data**: A binding to the collection of data where the drag gesture is detected.
@@ -69,3 +76,7 @@ Feel free to customize the appearance and behavior of the `DraggableView` by adj
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
 Enjoy using `DragGestureKit` in your SwiftUI projects!
+
+## Aknowledgment
+
+Many thanks to Lionel G for assisting me in achieving my objectives by providing valuable insights for calculations, and to Elyes D. for offering feedback on the code and suggesting improvements.
