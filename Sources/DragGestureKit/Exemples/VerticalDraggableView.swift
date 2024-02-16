@@ -18,7 +18,7 @@ private struct VerticalDraggableView: View {
                         Text(letter)
                             .padding(40)
                             .font(letter == letterOnDrag ? .title2 : .title3)
-                            .background(letter == letterOnDrag ? Color.green : Color.secondary)
+                            .background(letter == letterOnDrag ? Color.purple: Color.secondary)
                             .cornerRadius(10)
                             .scaleEffect(letter == letterOnDrag ? 1.2 : 0.9)
                             .shadow(radius: 10)
