@@ -1,4 +1,6 @@
-# DragGestureKit
+<p align="center">
+    <img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/83305589-66f2-478f-856d-b205a0177a66" width="500"/>
+</p>
 
 `DragGestureKit` is a SwiftUI library that allows you to detect the position of a drag gesture within a collection of data elements. It dynamically computes the index of the element being dragged based on the drag gesture's position and invokes a callback to handle this information.
 
