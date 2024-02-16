@@ -26,7 +26,7 @@ import DragGestureKit
 
 | Vertical | Horizontal |
 | --------| -----------|
-|<img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/51488675-ff27-4bb7-9f27-25bd246737ca" width="200"> | <img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/c1ba005d-3d89-4ead-9e80-b8595fec638a" width="200"> |
+|<img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/715aa8a8-73cf-48fa-86f0-b36ecd088b11" width="200"> | <img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/b7c2d3e9-dc63-432c-9436-407b161ae51c" width="200"> |
 
 
 Create a `DraggableView` in your SwiftUI view:
