@@ -4,6 +4,14 @@
 
 `DragGestureKit` is a SwiftUI library that allows you to detect the position of a drag gesture within a collection of data elements. It dynamically computes the index of the element being dragged based on the drag gesture's position and invokes a callback to handle this information.
 
+- [Usage](#usage)
+  - [Installation](#installation)
+  - [Example](#example)
+- [Overview](#overview)
+  - [Parameters](#parameters)
+- [Customization](#customization)
+- [Contributions](#contributions)
+
 ## Usage
 
 ### Installation
@@ -29,7 +37,7 @@ import DragGestureKit
 |<img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/715aa8a8-73cf-48fa-86f0-b36ecd088b11" width="200"> | <img src="https://github.com/Harry-KNIGHT/DragGestureKit/assets/63256761/b7c2d3e9-dc63-432c-9436-407b161ae51c" width="200"> |
 
 
-Create a `DraggableView` in your SwiftUI view:
+Exemple of a `DraggableView` in your SwiftUI view with binded data:
 
 ```swift
 import SwiftUI
@@ -45,7 +53,34 @@ struct ContentView: View {
                 ForEach(items, id: \.self) { item in
                     Text(item)
                         .padding()
-                        .background(Color.gray)
+                        .background(itemOnDrag == item ? Color.purple : Color.gray)
+                        .cornerRadius(8)
+                }
+            }
+        } onDragChanged: { item in
+            itemOnDrag = item
+        }
+    }
+}
+```
+
+Exemple of a `DraggableView` in your SwiftUI view with a standard variable:
+
+```swift
+import SwiftUI
+import DragGestureKit
+
+struct ContentView: View {
+    private var items = ["Item 1", "Item 2", "Item 3"]
+    @State private var itemOnDrag: String?
+
+    var body: some View {
+        DraggableView(elements: items, axis: .horizontal) {
+            HStack {
+                ForEach(items, id: \.self) { item in
+                    Text(item)
+                        .padding()
+                        .background(itemOnDrag == item ? Color.purple : Color.gray)
                         .cornerRadius(8)
                 }
             }
@@ -58,16 +93,17 @@ struct ContentView: View {
 
 In the projects, go to [/Sources/DragGestureKit/Exemples/](https://github.com/Harry-KNIGHT/DragGestureKit/tree/develop/Sources/DragGestureKit/Exemples) and you'll find the exemples shown above.
 
-## Parameters
-
-- **data**: A binding to the collection of data where the drag gesture is detected.
-- **axis**: The axis along which the drag gesture is detected (`horizontal` or `vertical`).
-- **content**: A closure that returns the content view to be displayed within the `DraggableView`.
-- **onDragChanged**: A callback closure that receives the data of the element over which the drag gesture is positioned during dragging.
-
 ## Overview
 
 `DraggableView` is a generic SwiftUI view designed to capture the position of a drag gesture within a specified collection of data elements.
+
+### Parameters
+
+- **data**: A binding to the collection of data where the drag gesture is detected.
+- **elements**: A collection of elements where the drag gesture is detected.
+- **axis**: The axis along which the drag gesture is detected (`horizontal` or `vertical`).
+- **content**: A closure that returns the content view to be displayed within the `DraggableView`.
+- **onDragChanged**: A callback closure that receives the data of the element over which the drag gesture is positioned during dragging.
 
 ## Customization
 
