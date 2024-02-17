@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-private struct VerticalDraggableView: View {
-    @State var data: [String]
+struct VerticalDraggableView: View {
+    let elements = ["1", "2", "3", "4", "5", "6"]
     @State private var letterOnDrag: String?
     var body: some View {
         VStack {
-            DraggableView(data: $data, axis: .vertical) {
+            DraggableView(elements: elements, axis: .vertical) {
                 VStack {
-                    ForEach(data, id: \.self) { letter in
+                    ForEach(elements, id: \.self) { letter in
                         Text(letter)
                             .padding(40)
                             .font(letter == letterOnDrag ? .title2 : .title3)
@@ -33,5 +33,5 @@ private struct VerticalDraggableView: View {
 }
 
 #Preview {
-    VerticalDraggableView(data: ["1", "2", "3", "4", "5", "6"])
+    VerticalDraggableView()
 }
