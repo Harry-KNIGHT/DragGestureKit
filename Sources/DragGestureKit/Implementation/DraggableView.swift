@@ -34,7 +34,7 @@ public struct DraggableView<Content: View, T: Hashable>: View {
                     .onChanged { value in
                         do {
                             let element = try dragHandler.computeElementAtIndexFromDragGesture(
-                                data: data.isEmpty ? self.elements : data,
+                                data: data.isEmpty ? elements : data,
                                 axis: axis,
                                 value: value,
                                 viewSize: viewSize
