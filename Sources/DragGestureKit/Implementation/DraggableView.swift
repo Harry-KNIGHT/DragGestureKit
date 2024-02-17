@@ -11,6 +11,7 @@ import SwiftUI
 public struct DraggableView<Content: View, T: Hashable>: View {
     @Binding var data: [T]
     let elements: [T]
+
     let axis: Axis.Set
     let content: Content
     let onDragChanged: (T?) -> Void
@@ -43,7 +44,7 @@ public struct DraggableView<Content: View, T: Hashable>: View {
                             print("-- Drag gesture out of bounds --")
                         }
                     }
-                    .onEnded { _ in 
+                    .onEnded { _ in
                         self.onDragChanged(nil)
                     }
             )
