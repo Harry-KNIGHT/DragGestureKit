@@ -9,12 +9,12 @@ import SwiftUI
 
 /// Detects the position of a drag gesture within a collection of data elements.
 public struct DraggableView<Content: View, T: Hashable>: View {
-    @Binding private var data: [T]
-    private let elements: [T]
+    @Binding var data: [T]
+    let elements: [T]
 
-    private let axis: Axis.Set
-    private let content: Content
-    private let onDragChanged: (T?) -> Void
+    let axis: Axis.Set
+    let content: Content
+    let onDragChanged: (T?) -> Void
 
     @State private var viewSize: Double = 0.0
     private var dragHandler = DragHandler()
@@ -63,7 +63,7 @@ extension DraggableView {
     ///   - onDragChanged: A closure to be called when the drag state changes, providing the dragged element.
     public init(
         data: Binding<[T]>,
-        axis: Axis.Set = .vertical,
+        axis: Axis.Set,
         @ViewBuilder content: () -> Content,
         onDragChanged: @escaping (T?) -> Void
     ) {
@@ -85,7 +85,7 @@ extension DraggableView {
     ///   - onDragChanged: A closure to be called when the drag state changes, providing the dragged element.
     public init(
         elements: [T],
-        axis: Axis.Set = .vertical,
+        axis: Axis.Set,
         @ViewBuilder content: () -> Content,
         onDragChanged: @escaping (T?) -> Void
     ) {

@@ -48,7 +48,7 @@ struct ContentView: View {
     @State private var itemOnDrag: String?
 
     var body: some View {
-        DraggableView(data: $items) {
+        DraggableView(data: $items, axis: .vertical) {
             VStack {
                 ForEach(items, id: \.self) { item in
                     Text(item)
@@ -101,7 +101,7 @@ In the projects, go to [/Sources/DragGestureKit/Exemples/](https://github.com/Ha
 
 - **data**: A binding to the collection of data where the drag gesture is detected.
 - **elements**: A collection of elements where the drag gesture is detected.
-- **axis**: The axis along which the drag gesture is detected, `vertical` by default.
+- **axis**: The axis along which the drag gesture is detected (`horizontal` or `vertical`).
 - **content**: A closure that returns the content view to be displayed within the `DraggableView`.
 - **onDragChanged**: A callback closure that receives the data of the element over which the drag gesture is positioned during dragging.
 
