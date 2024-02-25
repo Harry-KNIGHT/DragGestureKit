@@ -25,7 +25,10 @@ public struct DraggableView<Content: View, T: Hashable>: View {
                 GeometryReader { proxy in
                     Color.clear
                         .onAppear {
-                            viewSize = axis == .horizontal ? proxy.size.width : proxy.size.height
+                            viewSize = dragHandler.calculViewSize(axis: axis, proxy: proxy)
+                        }
+                        .onChange(of: [data, elements]) { _ in
+                            viewSize = dragHandler.calculViewSize(axis: axis, proxy: proxy)
                         }
                 }
             )

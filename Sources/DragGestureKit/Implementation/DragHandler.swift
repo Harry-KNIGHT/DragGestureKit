@@ -28,6 +28,10 @@ struct DragHandler {
         return data[index]
     }
 
+    func calculViewSize(axis: Axis.Set, proxy: GeometryProxy) -> Double {
+        axis == .horizontal ? proxy.size.width : proxy.size.height
+    }
+
     private enum IndexError: Error {
         case outOfBounds
     }
