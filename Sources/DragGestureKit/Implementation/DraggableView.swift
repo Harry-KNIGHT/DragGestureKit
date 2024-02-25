@@ -27,12 +27,12 @@ public struct DraggableView<Content: View, T: Hashable>: View {
                         .onAppear {
                             viewSize = dragHandler.calculViewSize(axis: axis, proxy: proxy)
                         }
-                        .onChange(of: data, perform: { _ in
+                        .onChange(of: data) { _ in
                             viewSize = dragHandler.calculViewSize(axis: axis, proxy: proxy)
-                        })
-                        .onChange(of: elements, perform: { _ in
+                        }
+                        .onChange(of: elements) { _ in
                             viewSize = dragHandler.calculViewSize(axis: axis, proxy: proxy)
-                        })
+                        }
                 }
             )
             .gesture(
