@@ -28,6 +28,9 @@ struct HorizontalDraggableView: View {
             } onDragChanged: { value in
                 letterOnDrag = value
             }
+            Button("Delet Letter") {
+                data.remove(at: 2)
+            }
         }
     }
 }
